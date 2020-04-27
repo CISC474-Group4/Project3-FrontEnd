@@ -1,0 +1,44 @@
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+    <a [routerLinkActive]='activeClass' class="navbar-brand" routerLink='home'>UHub</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a [routerLinkActive]='activeClass' class="nav-link"  routerLink='restaurant'
+            >Restuarants<span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto mr-auto">
+          <li>
+            <form class="form-inline">
+            <input
+                class="form-control  mr-sm-4"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+            />
+            </form>
+        </li>
+      </ul>
+      <ul class="navbar-nav content-justify-end">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Login/Sign-in</a>
+        </li>
+      </ul>
+        
+
+
+    </div>
+  </nav>

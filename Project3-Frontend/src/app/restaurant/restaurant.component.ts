@@ -10,6 +10,7 @@ export class RestaurantComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("Restaurant called");
   }
 
 }
