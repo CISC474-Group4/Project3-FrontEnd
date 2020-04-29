@@ -1,8 +1,8 @@
     
-    
-    <div class="row" >
-        <div class="col-8" style="background-color: bisque;" >
-            <div class="card bg-light mb-3" style="width: 100%;">
+    <!-- Padding row-->
+    <!-- <div class="row " style="height: 92.2vh;" > vh for viewport height -->
+        <!-- <div class="col-8 col-lg-9 " style="background-color: bisque; height: 100%;" >
+            <div class="card bg-light my-3 h-75" style="width: 100%;">
                 <img class="card-img-top" src="..." alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Restaurant Name</h5>
@@ -19,11 +19,62 @@
                 </div>
               </div>
         </div>
-        <div class="col-4" style="background-color: grey;">
-            <div class="row h3"> Tags:</div>
-            <!-- an Array of components or code ts to add components here? -->
-            <div class="row" >#tags holder</div>
+        <div class="col-4 col-lg-3 h-25 mt-3 " style="background-color: wheat;">
+          <div class="col mx-1 border border-dark rounded" style="background-color: aliceblue;">
+            <div class="row h3" > Tags:</div> -->
+              <!-- an Array of components or code ts to add components here? -->
+              <!-- <div class="row" >#tags holder</div>
+            </div>
+          </div>
+    </div> -->
+    
+    <div class="row " style="height: 92.2vh; " > <!-- vh for viewport height -->
+      <div class="col-8 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
+          
+          <div class="row w-100 pt-2 justify-content-center" >
+            <div class="col-6 border border-dark text-center" style="background-color: blanchedalmond;">
+              <h1 id="Restaurant_Name" >Restaurant Name</h1>
+            </div> 
+          </div>
+
+          <div id="Restaurant-info-cell" class="row">
+            <div class="container border border-dark m-2">
+              <p id="Location" class="h4">Location:</p>
+              <p id="Phone_number" class="h5">Phone Number:</p>
+            </div>
+          </div>
+
+          <div id="" class="row justify-content-center py-3">
+              <div class="col-6 border border-dark text-center">
+                <h1>Events</h1>
+              </div>
+              
+          </div>
+
+          <div id="event_cards" class="row justify-content-center py-3">
+            <div class="col-8 border border-dark text-center">
+              <div class="row justify-content-center py-3">
+                <div class="col border border-dark text-center px-1">
+                    <p>Event Card</p>
+                </div>
+                <div class="col border border-dark text-center px-1">
+                  <p>Event Card</p>
+                </div>
+                <div class="col border border-dark text-center px-1">
+                <p>Event Card</p>
+                </div>
+              </div>
+            </div>
+            
         </div>
 
-    </div>
-    
+      </div>
+      <div id="side_bar" class="col-4 col-lg-3 h-25 mt-3 " style="background-color: wheat;">
+        <div id="Tags_Container" class="col mx-1 border border-dark rounded" style="background-color: aliceblue;">
+          <div id="Tags" class="row h3" > Tags:</div>
+            <!-- an Array of components or code ts to add components here? -->
+            <div class="row" >#tags holder</div>
+          </div>
+        </div>
+  </div>
+  
