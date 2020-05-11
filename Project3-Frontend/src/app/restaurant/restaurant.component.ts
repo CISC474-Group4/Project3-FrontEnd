@@ -12,9 +12,9 @@ import { Events } from '../eventsc/events.model';
   providers:[BackapiService] //BackapiService
 })
 export class RestaurantComponent implements OnInit {
-
-  loadedrestaurants= [];
+  loadedRestaurantInfo = [];
   loadedevents = [];
+  loadedtags= [];
 
 
 
@@ -39,12 +39,23 @@ export class RestaurantComponent implements OnInit {
   /**
    * Calls backapiService.getRestaurantsFB() and parses through
    */
-  onFetchRestaurants(){
-    this.backapiService.getEventsFB().subscribe(response =>{
-      this.loadedrestaurants = response;
-      console.log(this.loadedrestaurants);
-  });
-  console.log(this.loadedrestaurants);
+  // onFetchRestaurants(){
+  //   this.backapiService.getRestaurantsFB().subscribe(response =>{
+  //     this.loadedrestaurants = response;
+  //     console.log(this.loadedrestaurants);
+  // });
+  // console.log(this.loadedrestaurants);
+  // }
+
+  /**
+   * Fetch Restaurant info
+   * @param name 
+   */
+  onFetchRestaurant(name:string){
+    this.backapiService.getRestaurantFB(name).subscribe(response =>{
+        this.loadedRestaurantInfo = response;
+        console.log(this.loadedRestaurantInfo);
+      });
   }
 
   /**
@@ -62,5 +73,7 @@ export class RestaurantComponent implements OnInit {
   onCreateRestaurant(restaurantData: Restaurant){
     this.backapiService.postRestaurantAPI(restaurantData);
   }
+
+  
 
 }

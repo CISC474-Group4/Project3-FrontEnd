@@ -28,8 +28,10 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                (input)="onUpdateSearchBar($event)"
             />
             </form>
+            <button type="button" class="btn btn-dark" (click)="onSearchButtonClick()">Search</button>
         </li>
       </ul>
       <ul class="navbar-nav content-justify-end">

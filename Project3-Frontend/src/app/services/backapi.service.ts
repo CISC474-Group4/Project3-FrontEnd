@@ -79,7 +79,7 @@ export class BackapiService {
    */
   getRestaurantsFB(){
     
-    return this.http.get<{[key:string]:Restaurant}>("https://ng-project3-db.firebaseio.com/restuarants.json")
+    return this.http.get<{[key:string]:Restaurant}>("https://ng-project3-db.firebaseio.com/restaurants.json")
     .pipe(
       map(response => {
       const restaurantArray: Restaurant[]= [];
@@ -91,6 +91,23 @@ export class BackapiService {
     }));
 
   }
+
+
+  getRestaurantFB(name: string){
+    return this.http.get<{[key:string]:Restaurant}>("https://ng-project3-db.firebaseio.com/restaurants/"+name +".json")
+    .pipe(
+      map(response => {
+      const restaurantArray: Restaurant[]= [];
+      for(const key in response){
+          restaurantArray.push({...response[key],id:key});
+          console.log(restaurantArray);
+      }
+      return restaurantArray;
+    }));
+
+  }
+
+
 
   /**
    * Return an Observable containing all all Events

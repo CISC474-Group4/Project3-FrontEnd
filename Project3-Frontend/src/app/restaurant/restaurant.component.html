@@ -29,42 +29,59 @@
     </div> -->
     
     <div class="row " style="height: 92.2vh; " > <!-- vh for viewport height -->
-      <div class="col-8 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
-          
-          <div class="row w-100 pt-2 justify-content-center" >
-            <div class="col-6 border border-dark text-center" style="background-color: blanchedalmond;">
-              <h1 id="Restaurant_Name" ></h1>
-            </div> 
-          </div>
-
-          <div id="Restaurant-info-cell" class="row">
-            <div class="container border border-dark m-2">
-              <p id="Location" class="h4">Location:</p>
-              <p id="Phone_number" class="h5">Phone Number:</p>
+      <div class="col-sm-10 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
+          <div class="container h-50">
+            <div id="Restaurant_image" class="row h-100 border-bottom border-dark align-items-end" style="padding-bottom: 0%; background-color:cornsilk;">
+              
+              <h2>El Diablo Bar and Grill</h2>
+              <h5>Main st, Newark, DE, 19717</h5>
             </div>
           </div>
+       
 
-          <div id="" class="row justify-content-center py-3">
-              <div class="col-6 border border-dark text-center">
+          <div id="" class="row h-50 justify-content-center py-3">
+              <div class="col-12 border-bottom border-dark text-center">
                 <h1>Events</h1>
+
+                <div class="row h-75 justify-content-center">
+              
+                  <div class="col border  border-dark text-center px-1"  *ngIf="loadedevents.length < 1">No Events</div>
+                  
+                  <div class="row h-100" *ngIf="loadedevents.length > 1">
+                    <div *ngFor="let event of loadedevents">
+                      <div class="col border border-dark text-center">
+                        <p>{{event.name}}</p>
+                        <p>{{event.event_name}}</p>
+                    </div>
+                  </div>
+                  </div>
+
+                </div> 
+
               </div>
               
           </div>
           
-          <div id="event_cards" class="row justify-content-center py-3">
+          <!-- <div id="event_cards" class="row justify-content-center py-3">
             <div class="col-8 border border-dark text-center">
+
+
+
               <div class="row justify-content-center py-3">
 
-                  <!-- <p *ngIf="loadedevents.length < 1">No Events</p> -->
-                <!-- <ul class="list-group" *ngIf="loadedevents.length > 1">
-                  <div *ngFor="let event of loadedEvents" class="col border border-dark text-center px-1" >
-                    <p>{{event.name}}</p>
+                <div class="col border border-dark text-center px-1" *ngIf="loadedevents.length < 1">No Events</div>
+                <ul *ngIf="loadedevents.length > 1">
+                  <div *ngFor="let event of loadedevents">
+                    <div class="col border border-dark text-center px-1">
+                      <p>Event Card</p>
+                   </div>
                 </div>
-                </ul>  -->
-                <!-- ^Loops through events list and generates html objects for each^ -->
+                </ul> 
+
+                ^Loops through events list and generates html objects for each^
                 <div class="col border border-dark text-center px-1">
                   <p>Event Card</p>
-              </div>
+                </div>
                 <div class="col border border-dark text-center px-1">
                     <p>Event Card</p>
                 </div>
@@ -74,18 +91,31 @@
                 <div class="col border border-dark text-center px-1">
                 <p>Event Card</p>
                 </div>
+
               </div>
+
+
+
             </div>
             
-        </div>
+        </div> -->
 
       </div>
-      <div id="side_bar" class="col-4 col-lg-3 h-25 mt-3 " style="background-color: wheat;">
+      
+      
+      <div id="side_bar" class="col-sm-2 col-lg-3 " style="height: 92.2vh; background-color: wheat;">
         <div id="Tags_Container" class="col mx-1 border border-dark rounded" style="background-color: aliceblue;">
           <div id="Tags" class="row h3" > Tags:</div>
             <!-- an Array of components or code ts to add components here? -->
             <div class="row" >#tags holder</div>
           </div>
+        
+          <div id="Description-Container" class="col h-75 mt-2 border border-dark rounded" style="background-color: aliceblue;">
+            <div class="row h5">Descriptions:</div>
+            <div class="row " > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, culpa necessitatibus error dolores iste asperiores repudiandae fuga in eaque. Mollitia sequi labore exercitationem similique voluptas quos laboriosam eos, placeat quam?</div>
+          </div>
+      
         </div>
-  </div>
+  
+    </div>
   
