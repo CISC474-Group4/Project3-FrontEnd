@@ -4,6 +4,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { map, catchError } from 'rxjs/operators';
 import {Restaurant} from '../restaurant/restaurant.model';
 import { Events } from '../eventsc/events.model';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-restaurant',
@@ -15,26 +16,37 @@ export class RestaurantComponent implements OnInit {
   loadedRestaurantInfo = [];
   loadedevents = [];
   loadedtags= [];
+  searchedName: string;
+  subscription:any;
 
 
 
-  constructor(private backapiService: BackapiService) { 
-    
-    // this.restaurant_name = backapiService.getRestuarant();
-    // this.restaurant_info = backapiService.getLocation();
+  constructor(
+    private backapiService: BackapiService,
+    private dataService: DataService,
+    ) { 
+
+    //  this.subscription =  this.dataService.currentRestaurant().subscribe(searchedName => this.searchedName = searchedName);
 
   }
 
   ngOnInit(): void {
   
+    
+    this.onFetchSearchedName();
 
-    // this.backapiService.postEventsFB("some soem","some soem","dome dome","tarkndsies","tmgmgb","sophmber");
-    // this.loadedevents= this.onFetchEvents();
+    this.onFetchRestaurant(this.searchedName);//Http.get(rootURL + "searchedName")
+    
     this.onFetchEvents();
     console.log(this.loadedevents);
     
     // this.getAllRestaurant();
   }
+
+  // ngOnDestroy(){
+  //   this.subscription.unsubscribe();
+  // }
+
 
   /**
    * Calls backapiService.getRestaurantsFB() and parses through
@@ -74,6 +86,8 @@ export class RestaurantComponent implements OnInit {
     this.backapiService.postRestaurantAPI(restaurantData);
   }
 
-  
+  onFetchSearchedName(){
+    this.dataService.currentRestaurant().subscribe(searchedName => this.searchedName = searchedName);
+  }
 
 }

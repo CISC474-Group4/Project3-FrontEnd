@@ -9,6 +9,7 @@ import { RestaurantComponent } from './restaurant/restaurant.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import {DataService} from './services/data.service';
 
 @NgModule({
   declarations: [

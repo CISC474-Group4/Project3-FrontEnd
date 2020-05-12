@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { BackapiService } from '../services/backapi.service';
+import {DataService} from '../services/data.service'
 import {Router} from '@angular/router'
 import { RestaurantComponent } from '../restaurant/restaurant.component';
 
@@ -15,12 +16,17 @@ import { RestaurantComponent } from '../restaurant/restaurant.component';
 export class MenuComponent implements OnInit {
   restaurantName = "";
   loadedrestaurants= [];
+  searchedName: string;
 
-  constructor(private backapiService:BackapiService, private router:Router) { }
+
+  constructor(private backapiService:BackapiService, private router:Router, private dataService:DataService) { }
   
   @Input()activeClass = 'active';
   
   ngOnInit(): void {
+
+    this.dataService.currentRestaurant().subscribe(name => this.searchedName = name);
+
   }
 
 
@@ -28,6 +34,7 @@ export class MenuComponent implements OnInit {
   onUpdateSearchBar(event:any){
     this.restaurantName = (<HTMLInputElement>event.target).value
     console.log(this.restaurantName);
+    this.dataService.changeRestaurant(this.restaurantName);
   }
 
   /**
@@ -35,11 +42,24 @@ export class MenuComponent implements OnInit {
    * Maybe pass restaurant Name from serach bar
    */
   onSearchButtonClick(){
-    console.log("clicked");
-      this.router.navigate(['/restaurant'])
-        .then(success => console.log('navigation success?' , success))
-        .catch(console.error); 
-    console.log(this.restaurantName);
+
+    
+  this.dataService.changeRestaurant(this.restaurantName);  
+    
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/restaurant']);
+  }); 
+
+
+  
+  
+  this.dataService.currentRestaurant().subscribe(name =>{
+        console.log("Menu Component:" +name);
+      });
+    // console.log("clicked");
+    //   this.router.navigate(['/restaurant'])
+    //     .then(success => console.log('navigation success?' , success))
+    //     .catch(console.error); 
     this.onFetchRestaurants();
   }
 
