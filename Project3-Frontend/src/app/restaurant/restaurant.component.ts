@@ -9,6 +9,7 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
+  // template:'{{loadedRestaurantInfo.name}}',
   styleUrls: ['./restaurant.component.css'],
   providers:[BackapiService] //BackapiService
 })
@@ -16,6 +17,9 @@ export class RestaurantComponent implements OnInit {
   loadedRestaurantInfo = [];
   loadedevents = [];
   loadedtags= [];
+  loadedDescription: any;
+  loadedName: any;
+  loadedLocation: any;
   searchedName: string;
   subscription:any;
 
@@ -23,29 +27,22 @@ export class RestaurantComponent implements OnInit {
 
   constructor(
     private backapiService: BackapiService,
-    private dataService: DataService,
-    ) { 
-
-    //  this.subscription =  this.dataService.currentRestaurant().subscribe(searchedName => this.searchedName = searchedName);
-
-  }
+    private dataService: DataService,){   }
 
   ngOnInit(): void {
   
     
     this.onFetchSearchedName();
-
+    if(this.searchedName != null){
     this.onFetchRestaurant(this.searchedName);//Http.get(rootURL + "searchedName")
-    
     this.onFetchEvents();
-    console.log(this.loadedevents);
-    
-    // this.getAllRestaurant();
   }
 
-  // ngOnDestroy(){
-  //   this.subscription.unsubscribe();
-  // }
+    
+    console.log(this.loadedevents);
+    
+
+  }
 
 
   /**
@@ -68,6 +65,7 @@ export class RestaurantComponent implements OnInit {
         this.loadedRestaurantInfo = response;
         console.log(this.loadedRestaurantInfo);
       });
+
   }
 
   /**
@@ -78,6 +76,9 @@ export class RestaurantComponent implements OnInit {
         this.loadedevents = response;
         console.log(this.loadedevents);
     });
+
+
+
     console.log(this.loadedevents);
   }
 
@@ -86,6 +87,9 @@ export class RestaurantComponent implements OnInit {
     this.backapiService.postRestaurantAPI(restaurantData);
   }
 
+  /**
+   * Retrieves Searched Name from Menu Component
+   */
   onFetchSearchedName(){
     this.dataService.currentRestaurant().subscribe(searchedName => this.searchedName = searchedName);
   }

@@ -33,7 +33,6 @@ export class MenuComponent implements OnInit {
 
   onUpdateSearchBar(event:any){
     this.restaurantName = (<HTMLInputElement>event.target).value
-    console.log(this.restaurantName);
     this.dataService.changeRestaurant(this.restaurantName);
   }
 
@@ -50,12 +49,6 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/restaurant']);
   }); 
 
-
-  
-  
-  this.dataService.currentRestaurant().subscribe(name =>{
-        console.log("Menu Component:" +name);
-      });
     // console.log("clicked");
     //   this.router.navigate(['/restaurant'])
     //     .then(success => console.log('navigation success?' , success))
@@ -68,10 +61,7 @@ export class MenuComponent implements OnInit {
 
     this.backapiService.getRestaurantsFB().subscribe(response =>{
       this.loadedrestaurants = response;
-      console.log(this.loadedrestaurants);
-      console.log(response);
   });
-  console.log(this.loadedrestaurants);
 
 
   }

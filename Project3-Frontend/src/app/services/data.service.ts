@@ -15,13 +15,10 @@ export class DataService {
 
 
   changeRestaurant(restuarant:string){
-    console.log(restuarant);
     this.restaurantSource.next(restuarant);
-    console.log(this.restaurantSource);  
   }
 
   currentRestaurant(){
-    console.log(this.restaurantSource);
     return this.restaurantSource.asObservable();
   }
 

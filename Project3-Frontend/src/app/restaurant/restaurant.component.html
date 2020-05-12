@@ -31,10 +31,12 @@
     <div class="row " style="height: 92.2vh; " > <!-- vh for viewport height -->
       <div class="col-sm-10 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
           <div class="container h-50">
-            <div id="Restaurant_image" class="row h-100 border-bottom border-dark align-items-end" style="padding-bottom: 0%; background-color:cornsilk;">
+            <div id="Restaurant_image" *ngFor="let restaurant of loadedRestaurantInfo"  class="row h-100 border-bottom border-dark align-items-end" style="padding-bottom: 0%; background-color:cornsilk;">
               
-              <h2>El Diablo Bar and Grill</h2>
-              <h5>Main st, Newark, DE, 19717</h5>
+                  <h2>{{restaurant.name}}</h2>
+                  <h5>{{restaurant.Location}}</h5>
+      
+              
             </div>
           </div>
        

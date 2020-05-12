@@ -94,13 +94,22 @@ export class BackapiService {
 
 
   getRestaurantFB(name: string){
-    return this.http.get<{[key:string]:Restaurant}>("https://ng-project3-db.firebaseio.com/restaurants/"+name +".json")
+    return this.http.get<{[key:string]:Restaurant}>("https://ng-project3-db.firebaseio.com/restaurants.json")
     .pipe(
       map(response => {
       const restaurantArray: Restaurant[]= [];
       for(const key in response){
+
+        // if(key == name){
+        //   for(const t in response[key]){
+        //   console.log({...response[key]});
+        //   }
+        // }
+
+          if(key == name){
           restaurantArray.push({...response[key],id:key});
-          console.log(restaurantArray);
+          console.log("Restuarant Array"+restaurantArray);
+          }
       }
       return restaurantArray;
     }));
