@@ -28,14 +28,18 @@
           </div>
     </div> -->
     
-    <div class="row " style="height: 92.2vh; " > <!-- vh for viewport height -->
+
+
+
+
+    <div *ngIf="loadedRestaurantInfo.length != 0" class="row " style="height: 92.2vh; " > <!-- vh for viewport height -->
       <div class="col-sm-10 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
           <div class="container h-50">
             <div id="Restaurant_image" *ngFor="let restaurant of loadedRestaurantInfo"  class="row h-100 border-bottom border-dark align-items-end" style="padding-bottom: 0%; background-color:cornsilk;">
               
                   <h2>{{restaurant.name}}</h2>
                   <h5>{{restaurant.Location}}</h5>
-      
+
               
             </div>
           </div>
@@ -109,12 +113,18 @@
         <div id="Tags_Container" class="col mx-1 border border-dark rounded" style="background-color: aliceblue;">
           <div id="Tags" class="row h3" > Tags:</div>
             <!-- an Array of components or code ts to add components here? -->
-            <div class="row" >#tags holder</div>
+            <div *ngFor="let restaurant of loadedRestaurantInfo"  class="row" >
+              
+              <div *ngFor="let element of restaurant">
+                {{restuarant.tags}}
+              </div>  
+              
+            </div>
           </div>
         
           <div id="Description-Container" class="col h-75 mt-2 border border-dark rounded" style="background-color: aliceblue;">
             <div class="row h5">Descriptions:</div>
-            <div class="row " > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, culpa necessitatibus error dolores iste asperiores repudiandae fuga in eaque. Mollitia sequi labore exercitationem similique voluptas quos laboriosam eos, placeat quam?</div>
+            <div *ngFor="let restaurant of loadedRestaurantInfo" class="row " >{{restaurant.Description}} </div>
           </div>
       
         </div>
