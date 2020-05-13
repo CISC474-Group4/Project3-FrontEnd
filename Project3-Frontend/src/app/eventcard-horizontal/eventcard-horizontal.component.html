@@ -11,13 +11,25 @@
         
         <div id="padding column" class="col-1"></div>
         
-        <div class="col 6 mr-3 my-2" style="background-color:salmon "> 
-            <div class="row">
-                <div class="col-6">
-                    <div class="row">Event Name:</div>
-                    <div class="row">Restaurant Name:</div>
-                    <div class="row">Time/Location:</div>
-                    <div class="row">Verified:</div>
+        <div class="col 6 mr-3 my-2" style="background-color:salmon;"> 
+            <div class="row" >
+                <div class="col-6" style="left: 1%;">
+                    <div class="row">
+                        Event Name:
+                        <!-- {{loadedEvent.name}} -->
+                    </div>
+                    <div class="row">
+                        Restaurant Name:
+                        <!-- {{loadedEvent.restaurant}} -->
+                    </div>
+                    <div class="row">
+                        Time/Location:
+                        <!-- {{loadedEvent.time}}{{loadedEvent.Location}} -->
+                    </div>
+                    <div class="row">
+                        Verified:
+                        <!-- {{loadedEvent.verified}} -->
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="row h-25">

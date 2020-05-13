@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import {DataService} from './services/data.service';
 import { EventcardHorizontalComponent } from './eventcard-horizontal/eventcard-horizontal.component';
+import { EventcardVerticalComponent } from './eventcard-vertical/eventcard-vertical.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventcardHorizontalComponent } from './eventcard-horizontal/eventcard-h
     EventsComponent,
     RestaurantComponent,
     MenuComponent,
-    EventcardHorizontalComponent
+    EventcardHorizontalComponent,
+    EventcardVerticalComponent
   ],
   imports: [
     BrowserModule,
