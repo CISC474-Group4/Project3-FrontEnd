@@ -10,7 +10,7 @@ import { Restaurant } from '../restaurant/restaurant.model';
 export class HomeComponent implements OnInit {
 
 
-  loadedRestaurants: Restaurant[] = [];
+  loadedRestaurants;
 
   constructor(private backapiService:BackapiService) { }
 

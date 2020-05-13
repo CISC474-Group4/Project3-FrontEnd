@@ -15,7 +15,6 @@ export class EventcardHorizontalComponent implements OnInit {
   constructor(private backapiService:BackapiService) { }
 
   ngOnInit(): void {
-
   }
 
 
