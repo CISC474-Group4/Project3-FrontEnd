@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import {DataService} from './services/data.service';
+import { EventcardHorizontalComponent } from './eventcard-horizontal/eventcard-horizontal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {DataService} from './services/data.service';
     HomeComponent,
     EventsComponent,
     RestaurantComponent,
-    MenuComponent
+    MenuComponent,
+    EventcardHorizontalComponent
   ],
   imports: [
     BrowserModule,

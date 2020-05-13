@@ -1,12 +1,47 @@
 
-<div class="container">
-<!-- <app-menu></app-menu> -->
-    <div class="row">
-        <div class="col-md-12">
-            <p>HOME WORKS</p>
+
+<div class="row " style="height: 88.5vh; " > 
+
+    <div id="side_bar" class="col-sm-2 col-lg-3 " style="height: 100%; background-color: wheat;">
+<!--         
+        <div class="row justify-content-center" style="height: 100%;">
+            
+            
+            <div class="row " style="background-color: aliceblue;  height: 25%;">
+
+            </div>
+            
+        </div> -->
+        <div class="row justify-content-center" style="height: 100%;">
+            <div class="btn-group-vertical">
+                <button type="button" class="btn btn-secondary-outline">Menu</button>
+                <button type="button" class="btn btn-secondary-outline">Restaurants</button>
+                <button type="button" class="btn btn-secondary-outline">Events</button>
+                <button type="button" class="btn btn-secondary-outline">Daily Specials</button>
+                <button type="button" class="btn btn-secondary-outline">Fundraisers</button>
+            </div>
+            <!-- <ul class="list-group list-group-flush" style="height: 100%;">
+                <li class="list-group-item">Menu</li>
+                <li class="list-group-item">Restaurants</li>
+                <li class="list-group-item">Events</li>
+                <li class="list-group-item">Daily Specials</li>
+                <li class="list-group-item">Fundraisers</li>
+              </ul> -->
+        
         </div>
+    
     </div>
 
 
+    <div class="col-sm-10 col-lg-9  border-right border-dark" style="background-color: bisque; height: 100%;" >
+      
+
+        <app-eventcard-horizontal *ngFor="let restaurant of loadedRestaurants" [restaurantInfo] = "restaurant"></app-eventcard-horizontal>
+        <!-- <app-eventcard-horizontal></app-eventcard-horizontal>
+        <app-eventcard-horizontal></app-eventcard-horizontal>
+        <app-eventcard-horizontal></app-eventcard-horizontal> -->
+
+      
+    </div>
 
 </div>

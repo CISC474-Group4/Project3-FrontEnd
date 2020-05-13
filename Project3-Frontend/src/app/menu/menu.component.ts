@@ -56,7 +56,6 @@ export class MenuComponent implements OnInit {
     this.onFetchRestaurants();
   }
 
-
   onFetchRestaurants(){
 
     this.backapiService.getRestaurantsFB().subscribe(response =>{
