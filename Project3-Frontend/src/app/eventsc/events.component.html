@@ -1,0 +1,40 @@
+
+
+
+
+<div class="container-fluid" *ngFor="let event of loadedEvent" style="height: 87.2vh; margin: 0%;">
+    <div class="row" style="height:100%">
+        <div id="padding "class="col-1"></div>
+        <div class="col-10" style="background-color: antiquewhite; height: 100%;">
+           
+            <div class="row h-25" style="background-color: aqua;">
+                image
+                <!-- {{loadedEvent.img_url}} -->
+            </div>
+            <div id="event-info" class="row mx-2 mt-1" style="background-color: azure; height: 25%;">
+                    <div class="container my-2">
+                        <div class="row">
+                            Location:<p> {{event.restaurant}}</p>
+                        </div>
+                       <div class="row">
+                            <p>Time: {{event.startTime}} - {{event.endTime}}</p>
+                       </div>
+                       <div class="row">
+                            <p>Event-Type: {{event.title}}</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row " style="height: 50%;">
+                <div class="col h-75 m-4" style="width: 90%; background-color:aqua">
+                    description:
+                    <p></p>
+                    {{event.description}}
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque tenetur id laboriosam laudantium reiciendis quidem delectus reprehenderit. Eius, a. Natus, eveniet exercitationem cupiditate ea culpa cumque! Enim, quis. Sit, architecto?
+                </div>
+                
+                
+            </div>
+        </div>
+        <div  id ="padding" class="col-1"></div>
+    </div>
+</div>

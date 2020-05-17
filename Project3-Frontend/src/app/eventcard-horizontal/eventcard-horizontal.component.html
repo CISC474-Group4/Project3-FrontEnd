@@ -1,0 +1,48 @@
+<div class="container my-2" style="height: 10rem; background-color:ghostwhite;">
+
+    <div class="row " style="opacity:initial 100% ; height: 100%;"> 
+
+        <div class="col-4 ml-2 my-2" style="background-color:lightcyan ">
+            <div *ngIf="eventInfo != undefined" class="row " style="position: absolute; ;bottom: 0%;">
+                {{eventInfo.restaurant}}
+            
+            </div>
+        </div>
+        
+        <div id="padding column" class="col-1"></div>
+        
+        <div class="col 6 mr-3 my-2" style="background-color:salmon;"> 
+            <div class="row" >
+                <div class="col-6" style="left: 1%;">
+                    <div class="row">
+                        Event Name:
+                        {{eventInfo.title}}
+                    </div>
+                    <div class="row">
+                        Restaurant Name:
+                        {{eventInfo.restaurant}}
+                    </div>
+                    <div class="row">
+                        Time/Location:
+                        <!-- {{loadedEvent.starttime - loadedEvent.endtime}} -->
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <div class="row h-25">
+                        <h5>Description:</h5>
+                    </div>
+                    <div class="row h-75">
+                        <p >{{eventInfo.description}}</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+
+    </div>
+
+
+</div>
