@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Restaurant } from '../restaurant/restaurant.model';
 import { BackapiService } from '../services/backapi.service';
+import {Events} from '../eventsc/events.model';
 
 @Component({
   selector: 'app-eventcard-horizontal',
@@ -10,7 +11,7 @@ import { BackapiService } from '../services/backapi.service';
 export class EventcardHorizontalComponent implements OnInit {
 
 
-  @Input() restaurantInfo: Restaurant;
+  @Input() eventInfo: Events;
 
   constructor(private backapiService:BackapiService) { }
 

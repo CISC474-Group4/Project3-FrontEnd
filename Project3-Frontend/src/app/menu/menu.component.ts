@@ -42,12 +42,11 @@ export class MenuComponent implements OnInit {
    */
   onSearchButtonClick(){
 
-    
-  this.dataService.changeRestaurant(this.restaurantName);  
+    this.dataService.changeRestaurant(this.restaurantName);  
     
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/restaurant']);
-  }); 
+    }); 
 
     // console.log("clicked");
     //   this.router.navigate(['/restaurant'])
@@ -58,7 +57,7 @@ export class MenuComponent implements OnInit {
 
   onFetchRestaurants(){
 
-    this.backapiService.getRestaurantsFB().subscribe(response =>{
+    this.backapiService.getRestaurantsAPI().subscribe(response =>{
       this.loadedrestaurants = response;
   });
 

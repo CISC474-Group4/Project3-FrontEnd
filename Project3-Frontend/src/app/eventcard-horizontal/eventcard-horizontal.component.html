@@ -3,8 +3,8 @@
     <div class="row " style="opacity:initial 100% ; height: 100%;"> 
 
         <div class="col-4 ml-2 my-2" style="background-color:lightcyan ">
-            <div *ngIf="restaurantInfo != undefined" class="row " style="position: absolute; ;bottom: 0%;">
-                {{restaurantInfo.name}}
+            <div *ngIf="eventInfo != undefined" class="row " style="position: absolute; ;bottom: 0%;">
+                {{eventInfo.restaurant}}
             
             </div>
         </div>
@@ -16,27 +16,24 @@
                 <div class="col-6" style="left: 1%;">
                     <div class="row">
                         Event Name:
-                        <!-- {{loadedEvent.name}} -->
+                        {{eventInfo.title}}
                     </div>
                     <div class="row">
                         Restaurant Name:
-                        <!-- {{loadedEvent.restaurant}} -->
+                        {{eventInfo.restaurant}}
                     </div>
                     <div class="row">
                         Time/Location:
-                        <!-- {{loadedEvent.time}}{{loadedEvent.Location}} -->
+                        <!-- {{loadedEvent.starttime - loadedEvent.endtime}} -->
                     </div>
-                    <div class="row">
-                        Verified:
-                        <!-- {{loadedEvent.verified}} -->
-                    </div>
+                    
                 </div>
                 <div class="col-6">
                     <div class="row h-25">
                         <h5>Description:</h5>
                     </div>
                     <div class="row h-75">
-                        <p >{{restaurantInfo.description}}</p>
+                        <p >{{eventInfo.description}}</p>
                     </div>
                 </div>
             </div>

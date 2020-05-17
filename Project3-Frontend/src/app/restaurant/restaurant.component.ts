@@ -61,7 +61,7 @@ export class RestaurantComponent implements OnInit {
    * @param name 
    */
   onFetchRestaurant(name:string){
-    this.backapiService.getRestaurantFB(name).subscribe(response =>{
+    this.backapiService.getRestaurantAPI(name).subscribe(response =>{
         this.loadedRestaurantInfo = response;
         console.log(this.loadedRestaurantInfo);
       });
@@ -72,7 +72,7 @@ export class RestaurantComponent implements OnInit {
    * Get All Events
    */
   onFetchEvents(){
-    this.backapiService.getEventsFB().subscribe(response =>{
+    this.backapiService.getRestaurantEventsAPI(this.searchedName).subscribe(response =>{
         this.loadedevents = response;
         console.log(this.loadedevents);
     });

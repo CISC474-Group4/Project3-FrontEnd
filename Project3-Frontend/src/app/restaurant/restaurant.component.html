@@ -56,8 +56,8 @@
                   <div class="row h-100" *ngIf="loadedevents.length > 1">
                     <div *ngFor="let event of loadedevents">
                       <div class="col border border-dark text-center">
-                        <p>{{event.name}}</p>
-                        <p>{{event.event_name}}</p>
+                        <p>{{event.title}}</p>
+                        <p>{{event.description}}</p>
                     </div>
                   </div>
                   </div>
@@ -115,16 +115,16 @@
             <!-- an Array of components or code ts to add components here? -->
             <div *ngFor="let restaurant of loadedRestaurantInfo"  class="row" >
             
-              <!-- <div *ngFor="let element of restaurant">
-                {{restuarant.tags}}
-              </div>   -->
+              <div *ngFor="let element of restaurant.tags">
+                #{{element}}
+              </div>  
               
             </div>
           </div>
         
           <div id="Description-Container" class="col h-75 mt-2 border border-dark rounded" style="background-color: aliceblue;">
             <div class="row h5">Descriptions:</div>
-            <div *ngFor="let restaurant of loadedRestaurantInfo" class="row " >{{restaurant.Description}} </div>
+            <div *ngFor="let restaurant of loadedRestaurantInfo" class="row " >{{restaurant.description}} </div>
           </div>
       
         </div>

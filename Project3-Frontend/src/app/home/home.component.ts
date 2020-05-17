@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
 
   loadedRestaurants;
-
+  loadedEvents;
   constructor(private backapiService:BackapiService) { }
 
   ngOnInit(): void {
@@ -21,9 +21,18 @@ export class HomeComponent implements OnInit {
 
   onFetchRestaurants(){
     
-    this.backapiService.getRestaurantsFB().subscribe(response =>{
-      this.loadedRestaurants = response;
-    })
+    // this.backapiService.getRestaurantsFB().subscribe(response =>{
+    //   this.loadedRestaurants = response;
+    // })
+
+
+    this.backapiService.getEventsAPI().subscribe(response =>{
+      this.loadedEvents = response;
+      console.log(response);
+    });
+
+
+    
     console.log(this.loadedRestaurants);
   }
 

@@ -1,9 +1,11 @@
 export interface Events{
 
-    event_name:string;
-    id: string;
-    restaurant_name: string;
+    title:string;
+    _id: string;
+    restaurant: string;
     description:string;
-    location:string;
     img_url: string;
+    // location:string;
+    starttime: string;
+    endtime: string;
 }
