@@ -11,7 +11,7 @@ const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
     {path:'home', component: HomeComponent},
     {path:'restaurant', component: RestaurantComponent},
-    {path:'event',component: EventsComponent}
+    {path:'events',component: EventsComponent}
   ];
 
 @NgModule({

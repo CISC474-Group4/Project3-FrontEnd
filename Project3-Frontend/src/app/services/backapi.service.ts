@@ -108,6 +108,14 @@ export class BackapiService {
   }
 
 
+  getEventIDAPI(ID: string):Observable<any>{
+
+    return this.http.get<{[key:string]:Events}>(this.path + "events"+ID);
+
+  }
+
+
+
   //Add a new Restaurant
   postRestaurantAPI(restaurantData: Restaurant){
 
