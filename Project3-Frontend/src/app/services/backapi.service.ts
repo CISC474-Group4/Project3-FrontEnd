@@ -127,6 +127,26 @@ export class BackapiService {
   }
   
 
+  postOtherRestaurantAPI(name:string,
+    description:string,
+    location:string,
+    img_url: string,){
+    
+    const restaurantData: Restaurant = {
+        name:name,
+        id:null,
+        description:description,
+        location:location,
+        img_url:img_url
+    };
+
+    this.http.post(this.path + "restuarant", restaurantData)
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
+
+  }
+
    /**
    * Posts Events to API
    * 
@@ -141,13 +161,15 @@ export class BackapiService {
     description:string,img_url: string, starttime:string, endtime:string){
     const postData: Events = {
       title:title,
-      _id:id ,
+      _id:null ,
       restaurant:restaurant,
       description:description,
       img_url: img_url,
       starttime: starttime,
       endtime:endtime
     };
+
+    
 
     this.http.post<{[key:string]:Events}>(this.path + "events",
       postData).subscribe(responseData => {

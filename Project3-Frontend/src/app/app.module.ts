@@ -13,6 +13,7 @@ import {DataService} from './services/data.service';
 import { EventcardHorizontalComponent } from './eventcard-horizontal/eventcard-horizontal.component';
 import { EventcardVerticalComponent } from './eventcard-vertical/eventcard-vertical.component';
 import { SubmissionformComponent } from './submissionform/submissionform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SubmissionformComponent } from './submissionform/submissionform.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi:true}],
   bootstrap: [AppComponent]
