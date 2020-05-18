@@ -12,6 +12,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import {DataService} from './services/data.service';
 import { EventcardHorizontalComponent } from './eventcard-horizontal/eventcard-horizontal.component';
 import { EventcardVerticalComponent } from './eventcard-vertical/eventcard-vertical.component';
+import { SubmissionformComponent } from './submissionform/submissionform.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EventcardVerticalComponent } from './eventcard-vertical/eventcard-verti
     RestaurantComponent,
     MenuComponent,
     EventcardHorizontalComponent,
-    EventcardVerticalComponent
+    EventcardVerticalComponent,
+    SubmissionformComponent
   ],
   imports: [
     BrowserModule,
