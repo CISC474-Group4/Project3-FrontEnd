@@ -119,7 +119,7 @@ export class BackapiService {
   //Add a new Restaurant
   postRestaurantAPI(restaurantData: Restaurant){
 
-    this.http.post(this.path + "restuarant", restaurantData)
+    this.http.post(this.path + "restaurants", restaurantData)
       .subscribe(responseData => {
         console.log(responseData);
       });
@@ -140,7 +140,7 @@ export class BackapiService {
         img_url:img_url
     };
 
-    this.http.post(this.path + "restuarant", restaurantData)
+    this.http.post(this.path + "restaurants", restaurantData)
       .subscribe(responseData => {
         console.log(responseData);
       });
